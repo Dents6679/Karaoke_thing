@@ -72,7 +72,7 @@ rickroll_timings = [43.5, 3.98, 4.23, 4.22, 3.99, 5.31, 2.63, 2.11, 2.09, 4.33, 
 """Tequila Stuff"""
 tequila_link = "https://dl.sndup.net/nt4q/tequila.mp3"
 tequila_lines = ["Tequila!", "Tequila!", "Tequila!"]
-
+# TODO need to set these timings properly ⬇️
 tequila_timings = [22 + 52, 43, 32]
 
 """All Star Stuff"""
@@ -137,9 +137,9 @@ Only shooting stars break the mold
 """
 allstar_lines = allstar_lyrics.split("\n")
 
-allstar_timings = [27, 2.53, 2.44, 4.43, 2.03, 2.26, 5.01, 2.89, 2.29, 2.31, 2.3, 1.75, 2.68, 2.23, 2.54, 2.46, 4.41,
-                   3.74, 5.46, 2.45, 2.12, 1.93, 2.24, 2.35, 2.26, 2.28, 3.06, 4.63,
-                   4.39, 3.73, 5.17, 19.07, 5.47, 4.55, 3.53, 2.92, 4.29, 4.90, 2.38, 1.97, 4.9, 2.86, 2.31, 2.25, 2.4,
+allstar_timings = [27.0, 2.48, 2.39, 4.43, 2.03, 2.21, 4.96, 2.84, 2.29, 2.28, 2.25, 1.70, 2.63, 2.18, 2.49, 2.41, 4.36,
+                   3.69, 5.41, 2.40, 2.07, 1.88, 2.19, 2.30, 2.21, 2.23, 3.01, 4.58,
+                   4.34, 3.68, 5.12, 19.07, 5.47, 4.55, 3.53, 2.92, 4.29, 4.90, 2.38, 1.97, 4.9, 2.86, 2.31, 2.25, 2.4,
                    1.71, 2.73, 2.17, 2.61, 4.61, 4.33, 3.73, 5.51, 3.74]
 
 """Auth Token Stuff"""
@@ -232,7 +232,7 @@ number_checker_re = re.compile(r'(\+447)\d{9}$')
 otherlayout = [[sg.Button("OK")]]
 
 layout = [
-    [sg.Text("Welcome to Tom's shitty karaoke!")],
+    [sg.Text("Welcome to Tom's SMS karaoke!")],
     [sg.Text("Mobile Number:"), sg.Input(key="-IN-")],
     [sg.Button("Submit & Send test message", key="submit_button")],
     [sg.Button("Never Gonna Give You Up", key="rickroll_button"),
@@ -243,7 +243,7 @@ layout = [
 
 ]
 
-window = sg.Window("Test Window", layout)
+window = sg.Window("SMS Karaoke!", layout)
 
 while True:
     window.refresh()
