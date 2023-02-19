@@ -64,7 +64,7 @@ Never gonna say goodbye
 Never gonna tell a lie and hurt you"""
 rickroll_lines = rickroll_lyrics.split("\n")  # splits lyrics into individual lines
 
-rickroll_timings = [36.2, 3.98, 4.23, 4.22, 3.99, 5.31, 2.63, 2.11, 2.09, 4.33, 1.99, 2.16, 5.11, 4.18, 4.15, 4.28,
+rickroll_timings = [43.5, 3.98, 4.23, 4.22, 3.99, 5.31, 2.63, 2.11, 2.09, 4.33, 1.99, 2.16, 5.11, 4.18, 4.15, 4.28,
                     4.06, 5.22, 2.67, 2.15, 2.10, 4.28, 2.13, 1.97, 4.35, 2.07, 2.11, 4.23, 2.16, 2.11, 4.76, 17.19,
                     4.24, 4.23, 4.23, 4, 5.3, 2.65, 2.1, 2.19, 4.24, 2.09, 2.07, 4.29, 2.05, 2.13, 4.31, 2.01, 2.19,
                     4.24, 2.13, 2.09, 4.24, 2.01, 2.17]
@@ -72,8 +72,8 @@ rickroll_timings = [36.2, 3.98, 4.23, 4.22, 3.99, 5.31, 2.63, 2.11, 2.09, 4.33, 
 """Tequila Stuff"""
 tequila_link = "https://dl.sndup.net/nt4q/tequila.mp3"
 tequila_lines = ["Tequila!", "Tequila!", "Tequila!"]
-# TODO need to set these timings properly ⬇️
-tequila_timings = [10 + 6 + 52, 43, 32]
+
+tequila_timings = [22 + 52, 43, 32]
 
 """All Star Stuff"""
 allstar_link = "https://dl.sndup.net/c3rt/AllStar_inst.mp3"
@@ -137,20 +137,20 @@ Only shooting stars break the mold
 """
 allstar_lines = allstar_lyrics.split("\n")
 
-allstar_timings = [20, 2.53, 2.44, 4.43, 2.03, 2.26, 5.01, 2.89, 2.29, 2.31, 2.3, 1.75, 2.68, 2.23, 2.54, 2.46, 4.41,
+allstar_timings = [27, 2.53, 2.44, 4.43, 2.03, 2.26, 5.01, 2.89, 2.29, 2.31, 2.3, 1.75, 2.68, 2.23, 2.54, 2.46, 4.41,
                    3.74, 5.46, 2.45, 2.12, 1.93, 2.24, 2.35, 2.26, 2.28, 3.06, 4.63,
                    4.39, 3.73, 5.17, 19.07, 5.47, 4.55, 3.53, 2.92, 4.29, 4.90, 2.38, 1.97, 4.9, 2.86, 2.31, 2.25, 2.4,
                    1.71, 2.73, 2.17, 2.61, 4.61, 4.33, 3.73, 5.51, 3.74]
 
 """Auth Token Stuff"""
 
-account_sid = '---'
-auth_token = '---'
+account_sid = 'AC2fab780b5a0545eb3fb74fbe4efecd40'
+auth_token = '[REDACTED]'
 client = Client(account_sid, auth_token)
 
 
-target_number = "---"
-from_number = "---"
+target_number = "[REDACTED]"
+from_number = "+442033227901"
 
 """Call Stuff"""
 
@@ -163,7 +163,7 @@ def play_rickroll():
     call = client.calls.create(
         twiml=str(response),
         to=target_number,
-        from_= from_number
+        from_=from_number
     )
 
 
@@ -174,7 +174,7 @@ def play_tequila():
     call = client.calls.create(
         twiml=str(response),
         to=target_number,
-        from_= from_number
+        from_=from_number
     )
 
 
@@ -186,7 +186,7 @@ def play_allstar():
     call = client.calls.create(
         twiml=str(response),
         to=target_number,
-        from_= from_number
+        from_=from_number
     )
 
 
@@ -195,34 +195,34 @@ def play_allstar():
 
 def send_message(input_str):
     client.messages.create(
-        messaging_service_sid='MG8c8ef9ca3919940ab43cf98d4614f223',
+        messaging_service_sid='MG528ea37a00d6b206d0bde77f6fb19120',
         body=input_str,
         to=target_number
-`   )
+    )
 
 
 def send_tequila_lyrics():
     for i in range(3):
         time.sleep(tequila_timings[i])
         window.refresh()
-        # send_message(tequila_lines[i])
-        print(tequila_lines[i])
+        send_message(tequila_lines[i])
+
 
 
 def send_rickroll_lyrics():
     for i in range(55):
         time.sleep(rickroll_timings[i])
         window.refresh()
-        # send_message(rickroll_lines[i])
-        print(rickroll_lines[i])
+        send_message(rickroll_lines[i])
+
 
 
 def send_allstar_lyrics():
     for i in range(len(allstar_timings)):
         window.refresh()
         time.sleep(allstar_timings[i])
-        # send_message(allstar_lines[i])
-        print(allstar_lines[i])
+        send_message(allstar_lines[i])
+
 
 
 """ UI STUFF """
@@ -265,7 +265,7 @@ while True:
         continue
     if event == "tequila_button":
         play_tequila()
-        send_tequila_lyrics()
+        # send_tequila_lyrics()
         continue
     if event == "rickroll_button":
         play_rickroll()
