@@ -1,4 +1,4 @@
-#Karaoke Thing
+# SMS Karaoke Thing
 
 ## Inspiration
 
