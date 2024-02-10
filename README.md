@@ -1,5 +1,5 @@
-# SMS Karaoke Thing
-
+# Twillioke
+A Twillio-based karaoke service.
 ## Inspiration
 
 I didn't really have any inspiration for this project, I just heard that Twilio was able to make phone calls and send SMS messages, and the fully formed idea popped straight into my head.
