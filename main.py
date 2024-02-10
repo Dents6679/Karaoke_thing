@@ -144,7 +144,7 @@ allstar_timings = [27.0, 2.48, 2.39, 4.43, 2.03, 2.21, 4.96, 2.84, 2.29, 2.28, 2
 
 """Auth Token Stuff"""
 
-account_sid = 'AC2fab780b5a0545eb3fb74fbe4efecd40'
+account_sid = '[REDACTED]'
 auth_token = '[REDACTED]'
 client = Client(account_sid, auth_token)
 
@@ -195,7 +195,7 @@ def play_allstar():
 
 def send_message(input_str):
     client.messages.create(
-        messaging_service_sid='MG528ea37a00d6b206d0bde77f6fb19120',
+        messaging_service_sid='REDACTED',
         body=input_str,
         to=target_number
     )
