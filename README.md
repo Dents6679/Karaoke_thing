@@ -1,5 +1,5 @@
 # Twillioke
-A Twillio-based karaoke service.
+An incredibly impractical Twillio-Based karaoke service built as a part of a hackathon.
 ## Inspiration
 
 I didn't really have any inspiration for this project, I just heard that Twilio was able to make phone calls and send SMS messages, and the fully formed idea popped straight into my head.
